@@ -26,16 +26,17 @@ const Login = () => {
     })
     return (
         <>
-            <h1>Jarwiz</h1>
-            <p>Preencha os campos para continuar</p>
+            <h1>Login</h1>
             <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
                 validationSchema={validations}
             >
                 <Form className="Login">
+                    
                     <div className="Login-Group">
                         <Field
+                            placeholder="e-mail"
                             name="email"
                             className="Login-Field"
                         />
@@ -47,6 +48,7 @@ const Login = () => {
                     </div>
                     <div className="Login-Group">
                         <Field
+                            placeholder="password"
                             name="password"
                             className="Login-Field"
                         />
@@ -56,9 +58,12 @@ const Login = () => {
                             className="Login-Error"
                         />
                     </div>
-                    <button className="Login-Btn" type="button" onClick={Login} >Login</button>
+                    
+                    <button className="Login-Btn" type="submit">Login</button>
+                    
                 </Form>
             </Formik>
+                
         </>
     )
 }

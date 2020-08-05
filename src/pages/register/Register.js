@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import axios from 'axios'
 import { history } from '../../history'
 
-import '../login/Login.css'
+import './Register.css'
 
 const Register = () => {
     const handleSubmit = values => {
@@ -24,29 +24,17 @@ const Register = () => {
     })
     return (
         <>
-            <h1>Register</h1>
-            <p>Preencha os campos abaixo para criar um novo usuário</p>
+            <h1>Cadastro</h1>
             <Formik
                 initialValues={{}}
                 onSubmit={handleSubmit}
                 validationSchema={validations}
             >
                 <Form className="Login">
+                    
                     <div className="Login-Group">
                         <Field
-                            placeholder="Nome completo"
-                            name="fullName"
-                            className="Login-Field"
-                        />
-                        <ErrorMessage
-                            component="span"
-                            name="fullName"
-                            className="Login-Error"
-                        />
-                    </div>
-                    <div className="Login-Group">
-                        <Field
-                            placeholder="Digite seu email"
+                            placeholder="e-mail"
                             name="email"
                             className="Login-Field"
                         />
@@ -58,7 +46,7 @@ const Register = () => {
                     </div>
                     <div className="Login-Group">
                         <Field
-                            placeholder="Digite uma senha"
+                            placeholder="password"
                             name="password"
                             className="Login-Field"
                         />
@@ -68,19 +56,8 @@ const Register = () => {
                             className="Login-Error"
                         />
                     </div>
-                    <div className="Login-Group">
-                        <Field
-                            placeholder="Confirme senha"
-                            name="confirmPassword"
-                            className="Login-Field"
-                        />
-                        <ErrorMessage
-                            component="span"
-                            name="confirmPassword"
-                            className="Login-Error"
-                        />
-                    </div>
-                    <button className="Login-Btn" type="submit">Register</button>
+                    
+                    <button className="Register-Btn" type="submit">Cadastrar</button>
                 </Form>
             </Formik>
         </>
